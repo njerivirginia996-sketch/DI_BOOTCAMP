@@ -1,20 +1,3 @@
-#exercise 1
-"""
-menu_editor.py
-
-Handles the user interface (UI) for the restaurant menu manager program:
-- Showing the program's menu
-- Getting user input
-- Printing feedback / the restaurant menu
-
-This file has no idea how the menu is stored (JSON file, database, etc.) -
-it only ever calls methods on a MenuManager object. That's the
-encapsulation the exercise asks for: swap out menu_manager.py's internals
-completely and this file wouldn't need to change.
-"""
-
-from menu_manager import MenuManager
-
 USER_MENU_TEXT = """
 ===== Restaurant Menu Manager =====
 1. Show restaurant menu
@@ -23,6 +6,43 @@ USER_MENU_TEXT = """
 4. Exit
 ====================================
 """
+
+import json
+from pathlib import Path
+
+
+class MenuManager:
+    """Store menu items and save/load them from a JSON file."""
+
+    FILE_PATH = Path(__file__).with_name("menu.json")
+
+    def __init__(self):
+        self.items = []
+        if self.FILE_PATH.exists():
+            try:
+                data = json.loads(self.FILE_PATH.read_text(encoding="utf-8"))
+                if isinstance(data, list):
+                    self.items = data
+            except (OSError, json.JSONDecodeError):
+                pass
+
+    def get_items(self):
+        return self.items
+
+    def add_item(self, name, price):
+        self.items.append({"name": name, "price": price})
+
+    def remove_item(self, name):
+        for index, item in enumerate(self.items):
+            if item.get("name") == name:
+                self.items.pop(index)
+                return True
+        return False
+
+    def save_to_file(self):
+        self.FILE_PATH.write_text(
+            json.dumps(self.items, indent=2), encoding="utf-8"
+        )
 
 
 def load_manager():

@@ -69,9 +69,11 @@ console.log(biggestNumberInArray(['a', 3, 4, 2]));             // 4
 console.log(biggestNumberInArray([]));                          // 0
 
 
-//exercise 5function getUniqueElements(arr) {
-  // Using Set to strip out duplicate values}
+//exercise 5
+function getUniqueElements(arr) {
+  // Using Set to strip out duplicate values
   return [...new Set(arr)];
+}
 
 // Example usage:
 const list = [1, 2, 3, 3, 3, 3, 4, 5];
@@ -136,8 +138,12 @@ function createCalendar(year, month) {
   }
 
   // Append generated table to document body
-  document.body.appendChild(table);
+  if (typeof document !== "undefined" && document.body) {
+    document.body.appendChild(table);
+  }
 }
 
 // Example usage:
-createCalendar(2012, 9);
+if (typeof document !== "undefined") {
+  createCalendar(2012, 9);
+}

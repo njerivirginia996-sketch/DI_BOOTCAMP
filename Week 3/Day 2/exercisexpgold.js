@@ -50,14 +50,18 @@ console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 6)); // --> false
 
 
 //exercise 5
-const table = document.querySelector("table");
+if (typeof document !== "undefined") {
+  const table = document.querySelector("table");
 
-if (table) {
-  for (let i = 0; i < table.rows.length; i++) {
-    if (table.rows[i].cells[i]) {
-      table.rows[i].cells[i].style.backgroundColor = "red";
+  if (table) {
+    for (let i = 0; i < table.rows.length; i++) {
+      if (table.rows[i].cells[i]) {
+        table.rows[i].cells[i].style.backgroundColor = "red";
+      }
     }
+  } else {
+    console.log("No table found in the page.");
   }
 } else {
-  console.log("No table found in the page.");
+  console.log("This script is meant to run in a browser.");
 }

@@ -51,7 +51,7 @@ import time
 numbers = list(range(1, 1000001))
 print(f"Minimum value: {min(numbers)}")
 print(f"Maximum value: {max(numbers)}")
-calculate the sum and measure execution time
+# Calculate the sum and measure execution time
 start_time = time.time()
 total_sum = sum(numbers)
 end_time = time.time()

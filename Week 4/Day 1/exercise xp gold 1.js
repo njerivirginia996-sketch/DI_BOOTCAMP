@@ -18,11 +18,15 @@
 
 //exercise 3
 const arrayNum = [1, 2, 4, 5, 8, 9];
+
 const doubledArray = arrayNum.map((num, i) => {
-    console.log(num, i);
-    alert(num);
-    return num * 2;
-})
+  console.log(num, i);
+  console.log(num);
+  return num * 2;
+});
+
+console.log(doubledArray);
+
 //num is the current element being processed in the array, and i is the index of that element.
 
 

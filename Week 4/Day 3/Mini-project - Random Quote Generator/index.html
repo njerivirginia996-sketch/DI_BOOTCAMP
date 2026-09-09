@@ -1,0 +1,102 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Random Quote Generator</h1>
+
+        <!-- Part 1: Generate Quote -->
+        <section id="quote-section">
+            <p id="quote">Click the button to generate a quote.</p>
+            <p id="author"></p>
+        </section>
+
+        <button id="generate-btn">Generate Quote</button>
+
+        <!-- Part 2: Add a new quote -->
+        <h2>Add Your Own Quote</h2>
+
+        <form id="add-quote-form">
+
+            <label for="new-quote">Quote:</label>
+            <textarea
+                id="new-quote"
+                placeholder="Enter a quote"
+                required
+            ></textarea>
+
+            <label for="new-author">Author:</label>
+            <input
+                type="text"
+                id="new-author"
+                placeholder="Enter author"
+                required
+            >
+
+            <button type="submit">Add Quote</button>
+
+        </form>
+
+        <!-- Quote information buttons -->
+        <div class="buttons">
+
+            <button id="chars-space">
+                Characters (spaces included)
+            </button>
+
+            <button id="chars-no-space">
+                Characters (spaces excluded)
+            </button>
+
+            <button id="word-count">
+                Number of Words
+            </button>
+
+            <button id="like-btn">
+                ❤️ Like
+            </button>
+
+        </div>
+
+        <p id="result"></p>
+
+        <!-- Part 3: Filter by author -->
+        <h2>Search by Author</h2>
+
+        <form id="filter-form">
+
+            <input
+                type="text"
+                id="author-filter"
+                placeholder="Enter author name"
+                required
+            >
+
+            <button type="submit">Search</button>
+
+        </form>
+
+        <div class="navigation">
+
+            <button id="previous-btn">Previous</button>
+            <button id="next-btn">Next</button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

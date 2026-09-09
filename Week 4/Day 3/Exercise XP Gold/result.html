@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result</title>
+</head>
+<body>
+  <section id="result"></section>
+
+  <script>
+    // The query string lives in window.location.search, e.g. "?firstname=John&lastname=Doe"
+    const params = new URLSearchParams(window.location.search);
+
+    const firstname = params.get('firstname');
+    const lastname = params.get('lastname');
+
+    const section = document.getElementById('result');
+    section.innerHTML = `
+      <h2>Received data:</h2>
+      <p>Name: ${firstname}</p>
+      <p>Lastname: ${lastname}</p>
+    `;
+  </script>
+</body>
+</html>

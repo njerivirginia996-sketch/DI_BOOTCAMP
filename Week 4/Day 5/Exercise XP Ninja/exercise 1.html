@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Giphy Search</title>
+</head>
+<body>
+
+  <form id="gif-form">
+    <input type="text" id="search-input" placeholder="Enter a category..." required>
+    <button type="submit">Search</button>
+  </form>
+
+  <button id="delete-btn">Delete All Gifs</button>
+
+  <div id="gif-container"></div>
+
+  <script>
+    const apiKey = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+    const form = document.getElementById("gif-form");
+    const input = document.getElementById("search-input");
+    const gifContainer = document.getElementById("gif-container");
+    const deleteBtn = document.getElementById("delete-btn");
+
+    // Listen for form submission
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // stop the page from refreshing on submit
+
+      const searchTerm = input.value.trim();
+      if (!searchTerm) return;
+
+      const url = `https://api.giphy.com/v1/gifs/search?q=${searchTerm}&rating=g&api_key=${apiKey}&limit=10`;
+
+      fetch(url)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          const gifs = data.data;
+
+          // Loop through the results and append each gif to the page
+          gifs.forEach(gif => {
+            const gifUrl = gif.images.original.url;
+
+            const imgElement = document.createElement("img");
+            imgElement.src = gifUrl;
+            imgElement.style.width = "200px"; // keep them a reasonable size
+            imgElement.style.margin = "5px";
+
+            gifContainer.appendChild(imgElement);
+          });
+        })
+        .catch(error => console.error("Error fetching gifs:", error));
+
+      input.value = ""; // clear the input after search
+    });
+
+    // Delete all gifs when the delete button is clicked
+    deleteBtn.addEventListener("click", function () {
+      gifContainer.innerHTML = "";
+    });
+  </script>
+</body>
+</html>

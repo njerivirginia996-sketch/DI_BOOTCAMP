@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Gif</title>
+</head>
+<body>
+  <div id="gif-container"></div>
+
+  <script>
+    const apiKey = "hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My";
+    const url = `https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=${apiKey}`;
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        // data.data is the array of gif objects returned by Giphy
+        const gifs = data.data;
+
+        // Pick a random gif from the array
+        const randomIndex = Math.floor(Math.random() * gifs.length);
+        const randomGif = gifs[randomIndex];
+
+        // The direct image URL lives inside images.original.url
+        const gifUrl = randomGif.images.original.url;
+
+        // Create an <img> element and append it to the page
+        const imgElement = document.createElement("img");
+        imgElement.src = gifUrl;
+        document.getElementById("gif-container").appendChild(imgElement);
+      })
+      .catch(error => console.error("Error fetching gif:", error));
+  </script>
+</body>
+</html>

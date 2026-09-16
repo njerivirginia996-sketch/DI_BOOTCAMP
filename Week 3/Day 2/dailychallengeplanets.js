@@ -4,49 +4,65 @@ const planets = [
         name: "Mercury",
         color: "#b0b0b0",
         size: 48,
-        moons: 0
+        moons: 0,
+        x: 10,
+        y: 52
     },
     {
         name: "Venus",
         color: "#d89b52",
         size: 58,
-        moons: 0
+        moons: 0,
+        x: 22,
+        y: 32
     },
     {
         name: "Earth",
         color: "#2d7af7",
         size: 70,
-        moons: 1
+        moons: 1,
+        x: 38,
+        y: 58
     },
     {
         name: "Mars",
         color: "#d74b3d",
         size: 60,
-        moons: 2
+        moons: 2,
+        x: 54,
+        y: 35
     },
     {
         name: "Jupiter",
         color: "#c49166",
         size: 110,
-        moons: 4
+        moons: 4,
+        x: 70,
+        y: 52
     },
     {
         name: "Saturn",
         color: "#e7d7a5",
         size: 96,
-        moons: 3
+        moons: 3,
+        x: 82,
+        y: 30
     },
     {
         name: "Uranus",
         color: "#9fe3ec",
         size: 72,
-        moons: 2
+        moons: 2,
+        x: 18,
+        y: 76
     },
     {
         name: "Neptune",
         color: "#1e3dff",
         size: 70,
-        moons: 2
+        moons: 2,
+        x: 66,
+        y: 76
     }
 ];
 
@@ -60,6 +76,8 @@ if (typeof document !== "undefined") {
             planetDiv.style.backgroundColor = planet.color;
             planetDiv.style.width = `${planet.size}px`;
             planetDiv.style.height = `${planet.size}px`;
+            planetDiv.style.left = `${planet.x}%`;
+            planetDiv.style.top = `${planet.y}%`;
 
             const label = document.createElement("span");
             label.textContent = planet.name;
@@ -70,12 +88,13 @@ if (typeof document !== "undefined") {
                 moon.classList.add("moon");
 
                 const angle = (Math.PI * 2 * i) / planet.moons;
-                const distance = planet.size / 2 + 18 + i * 8;
+                const distance = planet.size / 2 + 18 + i * 10;
+
                 const x = Math.cos(angle) * distance;
                 const y = Math.sin(angle) * distance;
 
-                moon.style.left = `${50 + x}px`;
-                moon.style.top = `${50 + y}px`;
+                moon.style.left = `${planet.size / 2 + x}px`;
+                moon.style.top = `${planet.size / 2 + y}px`;
                 moon.style.width = `${Math.max(8, planet.size / 12)}px`;
                 moon.style.height = `${Math.max(8, planet.size / 12)}px`;
 

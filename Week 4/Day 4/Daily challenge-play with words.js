@@ -1,4 +1,3 @@
-//1st daily challenge
 function makeAllCaps(words) {
 	return new Promise((resolve, reject) => {
 		if (words.every(word => typeof word === "string")) {
@@ -34,7 +33,6 @@ makeAllCaps(["apple", "pear", "banana", "melon", "kiwi"])
 	.then(result => console.log(result))
 	.catch(error => console.log(error));
 
-//2nd daily challenge
 const morse = `{
 	"0": "-----", "1": ".----", "2": "..---", "3": "...--", "4": "....-",
 	"5": ".....", "6": "-....", "7": "--...", "8": "---..", "9": "----.",

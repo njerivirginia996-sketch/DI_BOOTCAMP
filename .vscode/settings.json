@@ -1,4 +1,7 @@
 {
+    "code-runner.executorMap": {
+        "typescript": "npx.cmd ts-node"
+    },
     "python-envs.pythonProjects": [
         {
             "path": "Week 2/Day 2/exercisexpgold.py",

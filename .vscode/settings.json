@@ -1,7 +1,9 @@
 {
     "code-runner.executorMap": {
-        "typescript": "npx.cmd ts-node"
+        "typescript": "npx.cmd tsx",
+        "python": "${workspaceRoot}\\.venv\\Scripts\\python.exe"
     },
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
     "python-envs.pythonProjects": [
         {
             "path": "Week 2/Day 2/exercisexpgold.py",

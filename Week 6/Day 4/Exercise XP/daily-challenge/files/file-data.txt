@@ -1,0 +1,2 @@
+This is my file data.
+I am learning Node.js file operations.

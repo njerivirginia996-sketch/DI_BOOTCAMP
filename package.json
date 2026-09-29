@@ -3,5 +3,27 @@
     "@types/node": "^22.20.3",
     "tsx": "^4.23.13",
     "undici-types": "^8.10.2"
-  }
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "di-bootcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njerivirginia996-sketch/DI_BOOTCAMP.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/njerivirginia996-sketch/DI_BOOTCAMP/issues"
+  },
+  "homepage": "https://github.com/njerivirginia996-sketch/DI_BOOTCAMP#readme"
 }

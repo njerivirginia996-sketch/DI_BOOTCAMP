@@ -1,0 +1,8 @@
+{
+  "name": "daily-challenge",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.0.0"
+  }
+}

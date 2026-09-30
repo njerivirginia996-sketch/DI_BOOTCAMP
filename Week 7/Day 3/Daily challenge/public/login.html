@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In | User Registry</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/forms.js" defer></script>
+</head>
+<body>
+    <main class="auth-shell">
+        <a class="brand" href="/">USER REGISTRY <span> / 01</span></a>
+        <section class="form-panel">
+            <p class="kicker">MEMBER ACCESS</p>
+            <h1>Welcome back.</h1>
+            <p class="intro">Sign in to your user registry account.</p>
+            <form id="login-form" data-form="login" novalidate>
+                <label>Username<input name="username" minlength="2" maxlength="20" autocomplete="username" required></label>
+                <label>Password<input name="password" type="password" minlength="6" autocomplete="current-password" required></label>
+                <p class="message" aria-live="polite" role="status"></p>
+                <button class="submit" type="submit" disabled>Sign in <span aria-hidden="true">↗</span></button>
+            </form>
+            <p class="switch">New here? <a href="/register.html">Create an account</a></p>
+        </section>
+        <footer>DEMO USER MANAGEMENT API <span>EXPRESS / JSON STORAGE</span></footer>
+    </main>
+</body>
+</html>

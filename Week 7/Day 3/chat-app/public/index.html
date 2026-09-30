@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login screen -->
+  <main id="login-screen" class="login">
+    <form id="login-form" class="card">
+      <h1>💬 Chat App</h1>
+      <p class="muted">Pick a username and a room to start chatting.</p>
+
+      <label for="username">Username</label>
+      <input id="username" type="text" maxlength="20" placeholder="e.g. Virginia" autocomplete="off" required />
+
+      <label for="room">Room</label>
+      <input id="room" type="text" maxlength="20" list="room-options" value="General" autocomplete="off" required />
+      <datalist id="room-options"></datalist>
+      <p class="hint">Choose an existing room or type a new name to create one.</p>
+
+      <p id="login-error" class="error" role="alert"></p>
+      <button type="submit">Join chat</button>
+    </form>
+  </main>
+
+  <!-- Chat screen -->
+  <div id="chat-screen" class="chat hidden">
+    <aside class="sidebar">
+      <h2>Rooms</h2>
+      <ul id="room-list" class="list"></ul>
+
+      <h2>In this room <span id="user-count" class="badge">0</span></h2>
+      <ul id="user-list" class="list"></ul>
+
+      <button id="leave-btn" class="leave" type="button">Leave room</button>
+    </aside>
+
+    <section class="main">
+      <header class="chat-header">
+        <h2 id="room-title"></h2>
+        <span id="me-label" class="muted"></span>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <div id="emoji-bar" class="emoji-bar hidden"></div>
+
+      <form id="message-form" class="composer" autocomplete="off">
+        <button id="emoji-toggle" type="button" class="icon-btn" title="Emojis">😊</button>
+        <input id="message-input" type="text" maxlength="500" placeholder="Type a message..." required />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

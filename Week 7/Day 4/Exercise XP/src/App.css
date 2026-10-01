@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #19332d;
+  background: #f3f6f3;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.7), transparent 50%);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(100% - 40px, 940px);
+  margin: 0 auto;
+  padding: 64px 0 80px;
+}
+
+.page-header {
+  padding-bottom: 34px;
+  border-bottom: 1px solid #d2ddd5;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 10px;
+  color: #4f7966;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.page-header h1,
+.exercise-section h2 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.header-copy {
+  margin: 14px 0 0;
+  color: #60716a;
+}
+
+.exercise-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 44px;
+}
+
+.exercise-section {
+  min-width: 0;
+  padding: 30px 0;
+  border-bottom: 1px solid #d2ddd5;
+}
+
+.exercise-section h2 {
+  margin: 0 0 18px;
+  font-size: 1.35rem;
+}
+
+.exercise-section h3 {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.jsx-title {
+  color: #c24d38;
+}
+
+.animal-list,
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.animal-list li,
+.tag-list li {
+  padding: 6px 10px;
+  border: 1px solid #d2ddd5;
+  border-radius: 4px;
+  background: #fff;
+  font-size: 0.875rem;
+}
+
+.exercise-three {
+  grid-column: 1 / -1;
+}
+
+.tag-exercise h1 {
+  font-size: 1.5rem;
+}
+
+.tag-exercise > a {
+  color: #176b54;
+  font-weight: 700;
+}
+
+.sample-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.sample-form label {
+  flex-basis: 100%;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.sample-form input {
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #bdcbc1;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.sample-form button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 4px;
+  background: #176b54;
+  color: #fff;
+  cursor: pointer;
+}
+
+.sample-image {
+  display: block;
+  width: min(100%, 420px);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 32px, 500px);
+    padding-top: 40px;
+  }
+
+  .exercise-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .exercise-three {
+    grid-column: auto;
+  }
+
+  .para {
+    padding: 28px 18px;
+  }
+}

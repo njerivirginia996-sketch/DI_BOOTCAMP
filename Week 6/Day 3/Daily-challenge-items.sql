@@ -35,12 +35,17 @@ ORDER BY po.order_id;
 
 
 -- Bonus: users have many orders; each order may belong to one user.
+-- Continue from Daily challenge tables.sql: unquoted Customer is stored as customer.
 CREATE TABLE IF NOT EXISTS users (
     user_id SERIAL PRIMARY KEY,
-    first_name VARCHAR(100) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
-    email VARCHAR(255) UNIQUE
+    customer_id INTEGER NOT NULL UNIQUE REFERENCES customer(id) ON DELETE CASCADE
 );
+
+-- Link each existing customer to one user record.
+INSERT INTO users (customer_id)
+SELECT c.id
+FROM customer AS c
+ON CONFLICT (customer_id) DO NOTHING;
 
 ALTER TABLE product_orders
 ADD COLUMN IF NOT EXISTS user_id INTEGER REFERENCES users(user_id) ON DELETE SET NULL;

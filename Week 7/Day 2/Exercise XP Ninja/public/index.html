@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#18251f" />
+    <title>Query Quest / Quiz Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/quiz.js" defer></script>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Query Quest home">
+          <img src="/query-mark.svg" alt="" width="36" height="36" />
+          <span>QUERY<span class="brand-accent">/</span>QUEST</span>
+        </a>
+        <div class="topbar-status"><span class="status-dot" aria-hidden="true"></span><span>DATABASE / ONLINE</span></div>
+      </header>
+
+      <main class="game-layout">
+        <section class="game-main" aria-labelledby="game-title">
+          <div class="hero-row">
+            <div>
+              <p class="eyebrow"><span>01</span> KNOWLEDGE IS A QUERY AWAY</p>
+              <h1 id="game-title">Query<br /><span>Quest.</span></h1>
+            </div>
+            <img class="quest-art" src="/query-mark.svg" alt="" width="94" height="94" />
+          </div>
+
+          <div class="difficulty-row">
+            <span class="section-label">DIFFICULTY</span>
+            <div class="difficulty-control" role="group" aria-label="Choose difficulty">
+              <button class="difficulty-button" type="button" data-difficulty="easy">Easy</button>
+              <button class="difficulty-button is-selected" type="button" data-difficulty="medium">Medium</button>
+              <button class="difficulty-button" type="button" data-difficulty="hard">Hard</button>
+            </div>
+          </div>
+
+          <section class="question-panel" aria-live="polite">
+            <div class="question-meta">
+              <span id="question-count">QUESTION 01 / 03</span>
+              <span class="difficulty-chip" id="difficulty-chip">MEDIUM</span>
+            </div>
+            <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+            <h2 id="question-text">Loading question...</h2>
+            <div class="option-list" id="option-list"></div>
+            <div class="feedback" id="feedback" role="status" aria-live="polite" hidden>
+              <div class="feedback-copy">
+                <strong id="feedback-title"></strong>
+                <span id="feedback-detail"></span>
+              </div>
+              <button class="next-button" id="next-button" type="button"><span id="next-label">NEXT</span><span aria-hidden="true">&#8594;</span></button>
+            </div>
+          </section>
+        </section>
+
+        <aside class="score-rail" aria-label="Quiz score">
+          <section class="score-panel">
+            <div class="score-heading"><span class="section-label">CURRENT SCORE</span><span class="score-star" aria-hidden="true">&#10038;</span></div>
+            <p class="score-value" id="score-value">00</p>
+            <p class="score-unit">POINTS</p>
+            <div class="score-divider"></div>
+            <div class="score-stat"><span>ACCURACY</span><strong id="accuracy-value">--%</strong></div>
+            <div class="score-stat"><span>STREAK</span><strong id="streak-value">00</strong></div>
+          </section>
+          <section class="run-panel">
+            <span class="section-label">THIS RUN</span>
+            <div class="run-count"><span id="run-answered">00</span><span class="run-separator">/</span><span id="run-total">03</span></div>
+            <div class="run-track" aria-hidden="true"><span id="run-fill"></span></div>
+            <span class="run-caption" id="run-caption">READY WHEN YOU ARE</span>
+          </section>
+          <p class="rail-footer"><span>QQ / 01</span><span>EST. ONE GOOD GUESS</span></p>
+        </aside>
+      </main>
+
+      <section class="result-screen" id="result-screen" hidden aria-live="polite">
+        <div class="result-mark" aria-hidden="true"><img src="/query-mark.svg" alt="" width="78" height="78" /></div>
+        <p class="eyebrow">RUN COMPLETE</p>
+        <h2 id="result-title">Nice querying.</h2>
+        <p class="final-score"><strong id="final-score">0 / 3</strong><span id="final-percent">0% ACCURACY</span></p>
+        <button class="restart-button" id="restart-button" type="button">PLAY AGAIN <span aria-hidden="true">&#8635;</span></button>
+      </section>
+
+      <footer class="page-footer"><span>EXPRESS <b>/</b> KNEX <b>/</b> SQLITE</span><span>TRUST THE QUERY <span class="footer-mark">&#8599;</span></span></footer>
+    </div>
+  </body>
+</html>

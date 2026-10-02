@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f3ec" />
+    <title>Signal / Web Development Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/quiz.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Signal quiz home">
+          <img src="/quiz-mark.svg" alt="" width="38" height="38" />
+          <span>SIGNAL<span class="brand-slash">/</span>01</span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span>FIELD TEST</span>
+          <span class="topbar-divider" aria-hidden="true"></span>
+          <span>WEB DEVELOPMENT</span>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="quiz-column" aria-labelledby="quiz-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow"><span>01</span> KNOW YOUR STACK</p>
+              <h1 id="quiz-title">The web,<br /><span>under pressure.</span></h1>
+            </div>
+            <div class="heading-stamp" aria-label="Five questions per round">
+              <span>5</span>
+              <span>QUESTIONS</span>
+            </div>
+          </div>
+
+          <div class="difficulty-row" aria-label="Choose difficulty">
+            <span class="control-label">LEVEL</span>
+            <div class="segmented-control" role="group" aria-label="Difficulty">
+              <button class="level-button" type="button" data-difficulty="easy">01 Easy</button>
+              <button class="level-button is-selected" type="button" data-difficulty="medium">02 Medium</button>
+              <button class="level-button" type="button" data-difficulty="hard">03 Hard</button>
+            </div>
+          </div>
+
+          <section class="question-panel" aria-live="polite">
+            <div class="panel-topline">
+              <span class="question-count" id="question-count">QUESTION 01 / 05</span>
+              <span class="difficulty-tag" id="difficulty-tag">MEDIUM</span>
+            </div>
+            <div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+            <h2 id="question-text">Loading your first question...</h2>
+            <div class="answer-list" id="answer-list"></div>
+            <div class="feedback" id="feedback" role="status" aria-live="polite" hidden>
+              <div class="feedback-copy">
+                <strong id="feedback-title"></strong>
+                <span id="feedback-detail"></span>
+              </div>
+              <button class="next-button" id="next-button" type="button">
+                <span id="next-button-label">NEXT</span>
+                <span aria-hidden="true">&#8594;</span>
+              </button>
+            </div>
+          </section>
+        </section>
+
+        <aside class="score-column" aria-label="Current quiz stats">
+          <div class="score-board">
+            <div class="score-board-heading">
+              <span class="eyebrow">LIVE SCORE</span>
+              <span class="score-spark" aria-hidden="true">&#10038;</span>
+            </div>
+            <div class="score-number" id="score-number">00</div>
+            <div class="score-caption">POINTS</div>
+            <div class="score-rule"></div>
+            <div class="score-subrow">
+              <span>ACCURACY</span>
+              <strong id="accuracy-value">--%</strong>
+            </div>
+            <div class="score-subrow">
+              <span>STREAK</span>
+              <strong id="streak-value">00</strong>
+            </div>
+          </div>
+
+          <div class="timer-board">
+            <div class="timer-head">
+              <span class="eyebrow">TIME LEFT</span>
+              <span class="timer-unit">SEC</span>
+            </div>
+            <div class="timer-dial" id="timer-dial" style="--timer-angle: 360deg">
+              <div class="timer-dial-inner"><span id="timer-value">20</span></div>
+            </div>
+            <p class="timer-state" id="timer-state">READY</p>
+          </div>
+
+          <div class="side-footer">
+            <span class="side-mark">S/01</span>
+            <span>BUILT FOR CURIOUS MINDS</span>
+          </div>
+        </aside>
+      </main>
+
+      <section class="result-screen" id="result-screen" hidden aria-live="polite">
+        <div class="result-art" aria-hidden="true">
+          <span class="result-art-ring"></span>
+          <span class="result-art-mark">S</span>
+          <span class="result-art-star">&#10038;</span>
+        </div>
+        <p class="eyebrow"><span>ROUND COMPLETE</span></p>
+        <h2 id="result-title">Signal received.</h2>
+        <p class="result-score"><strong id="final-score">0 / 5</strong><span id="final-percent">0% accuracy</span></p>
+        <button class="restart-button" id="restart-button" type="button">RUN IT BACK <span aria-hidden="true">&#8635;</span></button>
+      </section>
+
+      <footer class="page-footer">
+        <span>HTML <b>/</b> CSS <b>/</b> JS <b>/</b> NODE</span>
+        <span>TAKE YOUR BEST SHOT <span class="footer-arrow">&#8599;</span></span>
+      </footer>
+    </div>
+  </body>
+</html>

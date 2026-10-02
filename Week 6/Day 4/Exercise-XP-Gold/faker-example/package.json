@@ -1,0 +1,13 @@
+{
+  "name": "faker-example",
+  "version": "1.0.0",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "prompt": "node prompt-user.js"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.6.0"
+  }
+}

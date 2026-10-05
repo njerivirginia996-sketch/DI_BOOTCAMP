@@ -1,0 +1,18 @@
+<%- include('../partials/head', { title }) %>
+<%- include('../partials/header', { activePage: 'home' }) %>
+<main class="site-width page-main">
+  <section class="page-intro">
+    <p class="eyebrow">THE FACT FILE / RSS READER</p>
+    <h1><%= feedTitle %></h1>
+    <p class="intro-copy">Fresh curiosities from the feed, gathered in one place.</p>
+  </section>
+
+  <section aria-labelledby="latest-heading">
+    <div class="toolbar">
+      <h2 id="latest-heading">Latest facts</h2>
+      <span class="count-label"><%= posts.length %> <%= posts.length === 1 ? 'POST' : 'POSTS' %></span>
+    </div>
+    <%- include('../partials/posts', { posts, errorMessage, emptyMessage }) %>
+  </section>
+</main>
+<%- include('../partials/footer') %>

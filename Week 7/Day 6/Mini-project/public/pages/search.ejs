@@ -1,0 +1,51 @@
+<%- include('../partials/head', { title }) %>
+<%- include('../partials/header', { activePage: 'search' }) %>
+<main class="site-width page-main">
+  <section class="page-intro">
+    <p class="eyebrow">FIND SOMETHING INTERESTING</p>
+    <h1>Search the facts.</h1>
+    <p class="intro-copy">Look through the feed by a word in the headline or a topic.</p>
+  </section>
+
+  <section class="search-forms" aria-label="Search filters">
+    <form class="search-panel" action="/search/title" method="post">
+      <h2>Search by title</h2>
+      <div class="row g-2 align-items-end">
+        <div class="col-12 col-sm">
+          <label class="form-label" for="title">Title or keyword</label>
+          <input class="form-control" id="title" name="title" type="search" maxlength="160" value="<%= selectedTitle %>" placeholder="For example, space or animals">
+        </div>
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-search w-100" type="submit">Search titles</button>
+        </div>
+      </div>
+    </form>
+
+    <form class="search-panel" action="/search/category" method="post">
+      <h2>Browse by category</h2>
+      <div class="row g-2 align-items-end">
+        <div class="col-12 col-sm">
+          <label class="form-label" for="category">Category</label>
+          <select class="form-select" id="category" name="category" required>
+            <option value="" disabled <%= selectedCategory ? '' : 'selected' %>>Choose a category</option>
+            <% categories.forEach((category) => { %>
+              <option value="<%= category %>" <%= selectedCategory.toLocaleLowerCase() === category.toLocaleLowerCase() ? 'selected' : '' %>><%= category %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-search w-100" type="submit">Show category</button>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <section class="results-section" aria-labelledby="results-heading">
+    <div class="toolbar">
+      <h2 id="results-heading">Matching facts</h2>
+      <span class="count-label"><%= posts.length %> <%= posts.length === 1 ? 'MATCH' : 'MATCHES' %></span>
+    </div>
+    <%- include('../partials/posts', { posts, errorMessage, emptyMessage }) %>
+  </section>
+</main>
+<%- include('../partials/footer') %>

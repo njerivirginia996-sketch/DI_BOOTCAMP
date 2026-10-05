@@ -1,0 +1,24 @@
+<% if (errorMessage) { %>
+  <p class="notice" role="status"><%= errorMessage %></p>
+<% } %>
+<% if (posts && posts.length) { %>
+  <div class="post-list">
+    <% posts.forEach((post) => { %>
+      <article class="post-item">
+        <h3 class="post-title"><a href="<%= post.link %>" target="_blank" rel="noopener noreferrer"><%= post.title %><span class="visually-hidden"> (opens in a new tab)</span></a></h3>
+        <div class="post-meta">
+          <% if (post.publicationDate) { %><time datetime="<%= post.publicationDate %>"><%= post.publicationDate %></time><% } %>
+          <% if (post.creator) { %><span>By <%= post.creator %></span><% } %>
+          <% if (post.categories.length) { %>
+            <span class="category-list" aria-label="Categories">
+              <% post.categories.forEach((category, index) => { %><span class="category-tag"><%= index ? '· ' : '' %><%= category %></span><% }) %>
+            </span>
+          <% } %>
+        </div>
+        <% if (post.content) { %><p class="post-content"><%= post.content %></p><% } %>
+      </article>
+    <% }) %>
+  </div>
+<% } else if (!errorMessage && emptyMessage) { %>
+  <p class="empty-state"><%= emptyMessage %></p>
+<% } %>

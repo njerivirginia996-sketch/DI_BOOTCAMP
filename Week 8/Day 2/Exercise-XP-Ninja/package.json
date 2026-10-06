@@ -1,0 +1,25 @@
+{
+  "name": "week-8-day-2-exercise-xp-ninja",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail --names client,users,customers \"npm:dev:client\" \"npm:dev:users\" \"npm:dev:customers\"",
+    "dev:client": "wait-on tcp:3001 tcp:3002 && vite --host 0.0.0.0 --port 5192",
+    "dev:users": "node server/users.js",
+    "dev:customers": "node server/customers.js",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^9.2.1",
+    "vite": "^8.3.0",
+    "wait-on": "^8.0.3"
+  }
+}

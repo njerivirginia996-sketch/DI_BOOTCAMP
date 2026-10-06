@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #202a2a;
+  background: #f2f4ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #202a2a;
+  --muted: #69756f;
+  --line: #d8ded6;
+  --green: #c9ef79;
+  --coral: #dd795e;
+  --mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #edf0e9; background-image: radial-gradient(#d8ded6 0.7px, transparent 0.7px); background-size: 16px 16px; }
+.page-shell { max-width: 1120px; min-height: 100vh; margin: 0 auto; padding: 0 44px; background: rgba(242, 244, 239, .96); }
+.topbar { height: 78px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); font-family: var(--mono); font-size: 11px; text-decoration: none; }
+.brand b { color: var(--muted); font-weight: 400; }
+.brand-mark { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--green); font-family: 'Manrope', sans-serif; font-size: 16px; font-weight: 800; }
+.course-label, .eyebrow, .panel-index, .endpoint-label, .footer { font-family: var(--mono); font-size: 10px; }
+.course-label { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.course-label i { width: 4px; height: 4px; border-radius: 50%; background: var(--coral); }
+.page-intro { padding: 58px 0 47px; border-bottom: 1px solid var(--line); }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 20px; color: var(--muted); }
+.eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+.intro-row { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+.intro-row h1 { margin: 0; font-size: 62px; line-height: 1.03; font-weight: 700; }
+.intro-row h1 em { color: #52715f; font-style: normal; }
+.intro-row > p { max-width: 285px; margin: 0 0 5px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.data-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; padding: 38px 0 48px; }
+.data-panel { min-width: 0; }
+.panel-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 21px; }
+.panel-index { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid #cbd5c9; border-radius: 50%; color: #56705d; }
+.endpoint-label { margin: 0 0 3px; color: #748078; }
+.panel-heading h2 { margin: 0; font-size: 20px; font-weight: 700; }
+.record-list { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.record { min-height: 58px; display: grid; grid-template-columns: 35px 1fr 18px; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); }
+.record-id { color: var(--coral); font-family: var(--mono); font-size: 10px; }
+.record-name { font-size: 12px; font-weight: 600; }
+.record-arrow { color: #849088; font-size: 13px; text-align: right; }
+.panel-message { padding: 17px 0; color: var(--muted); font-size: 12px; }
+.error-message { color: #a14e39; }
+.footer { display: flex; justify-content: space-between; gap: 12px; padding: 21px 0 26px; border-top: 1px solid var(--line); color: #7c8981; }
+
+@media (max-width: 720px) {
+  .page-shell { padding: 0 24px; }
+  .intro-row { align-items: start; flex-direction: column; }
+  .intro-row h1 { font-size: 49px; }
+  .intro-row > p { max-width: 400px; }
+  .data-grid { grid-template-columns: 1fr; gap: 30px; }
+  .data-panel + .data-panel { padding-top: 30px; border-top: 1px solid var(--line); }
+}
+
+@media (max-width: 440px) {
+  .page-shell { padding: 0 17px; }
+  .topbar { height: 68px; }
+  .brand { font-size: 9px; }
+  .course-label { font-size: 9px; }
+  .page-intro { padding: 45px 0 37px; }
+  .intro-row h1 { font-size: 41px; }
+  .footer { font-size: 8px; }
+}

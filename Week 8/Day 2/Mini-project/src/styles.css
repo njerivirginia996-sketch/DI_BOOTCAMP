@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #202a2a;
+  background: #f0f3ee;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #202a2a;
+  --muted: #68766f;
+  --line: #d7ded6;
+  --green: #c9ef79;
+  --coral: #dc795d;
+  --mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #ebefea; background-image: radial-gradient(#d8ded6 0.7px, transparent 0.7px); background-size: 16px 16px; }
+.page-shell { max-width: 1180px; min-height: 100vh; margin: 0 auto; padding: 0 44px; background: rgba(240, 243, 238, .96); }
+.topbar { height: 78px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 11px; color: var(--ink); font-family: var(--mono); font-size: 11px; text-decoration: none; }
+.brand b { color: var(--muted); font-weight: 400; }
+.brand-mark { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: var(--green); font-family: 'Manrope', sans-serif; font-size: 16px; font-weight: 800; }
+.course-label, .eyebrow, .section-index, .endpoint-label, .item-count, .record-number, .footer { font-family: var(--mono); font-size: 10px; }
+.course-label { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+.course-label i { width: 4px; height: 4px; border-radius: 50%; background: var(--coral); }
+.page-intro { padding: 57px 0 44px; border-bottom: 1px solid var(--line); }
+.eyebrow { display: flex; align-items: center; gap: 9px; margin: 0 0 19px; color: var(--muted); }
+.eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+.intro-row { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+.intro-row h1 { margin: 0; font-size: 62px; line-height: 1.02; font-weight: 700; }
+.intro-row h1 em { color: #52715f; font-style: normal; }
+.intro-row > p { max-width: 280px; margin: 0 0 5px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.data-sections { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(270px, .75fr); gap: 44px; padding: 35px 0 44px; }
+.list-section { min-width: 0; }
+.section-heading { display: flex; align-items: center; gap: 13px; margin-bottom: 19px; }
+.section-index { width: 32px; height: 32px; display: grid; place-items: center; border: 1px solid #cbd5c9; border-radius: 50%; color: #56705d; }
+.endpoint-label { margin: 0 0 3px; color: #748078; }
+.section-heading h2 { margin: 0; font-size: 20px; font-weight: 700; }
+.item-count { margin-left: auto; color: #829087; text-align: right; }
+.posts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.post-item { display: grid; grid-template-columns: 27px 1fr; gap: 10px; min-width: 0; padding: 14px 12px 15px 0; border-bottom: 1px solid var(--line); }
+.record-number { color: var(--coral); }
+.post-item h3 { margin: 0 0 5px; font-size: 12px; font-weight: 700; line-height: 1.5; text-transform: capitalize; }
+.post-item p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.65; }
+.users-grid { margin: 0; padding: 0; border-top: 1px solid var(--line); list-style: none; }
+.user-item { min-height: 65px; display: grid; grid-template-columns: 33px 1fr 20px; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); }
+.user-initial { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #dce8d5; color: #54705d; font-size: 11px; font-weight: 700; }
+.user-details { display: grid; gap: 3px; min-width: 0; }
+.user-details strong { overflow: hidden; color: var(--ink); font-size: 11px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.user-details a { overflow: hidden; color: var(--muted); font-size: 10px; text-decoration: none; text-overflow: ellipsis; white-space: nowrap; }
+.user-details a:hover { color: #42624e; text-decoration: underline; }
+.state-message { padding: 16px 0; color: var(--muted); font-size: 12px; }
+.error-message { color: #a14e39; }
+.footer { display: flex; justify-content: space-between; gap: 12px; padding: 21px 0 26px; border-top: 1px solid var(--line); color: #7c8981; }
+
+@media (max-width: 850px) {
+  .page-shell { padding: 0 27px; }
+  .data-sections { grid-template-columns: minmax(0, 1fr); gap: 34px; }
+  .users-section { padding-top: 30px; border-top: 1px solid var(--line); }
+}
+
+@media (max-width: 600px) {
+  .page-shell { padding: 0 18px; }
+  .topbar { height: 68px; }
+  .brand { font-size: 9px; }
+  .course-label { font-size: 9px; }
+  .page-intro { padding: 44px 0 36px; }
+  .intro-row { align-items: start; flex-direction: column; gap: 12px; }
+  .intro-row h1 { font-size: 43px; }
+  .intro-row > p { max-width: 420px; }
+  .posts-grid { grid-template-columns: 1fr; }
+  .post-item { padding-right: 0; }
+  .footer { font-size: 8px; }
+}

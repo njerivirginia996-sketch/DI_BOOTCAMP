@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+
+:root { font-family: 'DM Sans', 'Segoe UI', sans-serif; color: #28362f; background: #f4eee4; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+* { box-sizing: border-box; }
+body { min-width: 320px; min-height: 100vh; margin: 0; }
+button, a { font: inherit; }
+.quote-page { --page-color: #f4eee4; --ink-color: #28362f; --action-color: #b84d36; --action-ink: #fffaf4; --accent-color: #be5c43; min-height: 100vh; display: flex; flex-direction: column; padding: 0 7.2%; color: var(--ink-color); background: var(--page-color); transition: color 350ms ease, background-color 350ms ease; }
+.masthead { min-height: 80px; display: flex; align-items: center; border-bottom: 1px solid color-mix(in srgb, var(--ink-color) 18%, transparent); }
+.wordmark { display: inline-flex; align-items: center; gap: 9px; color: inherit; font-size: 13px; font-weight: 700; text-decoration: none; }
+.wordmark-icon { width: 30px; height: 30px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, var(--ink-color) 55%, transparent); border-radius: 50%; font-family: 'Playfair Display', Georgia, serif; font-size: 15px; }
+.masthead-note, .issue-number, .eyebrow, .card-topline, .progress-total, .page-footer, .card-footnote { font: 10px 'DM Mono', 'Courier New', monospace; letter-spacing: 0; }
+.masthead-note { margin: auto; opacity: 0.64; }
+.issue-number { opacity: 0.64; }
+.quote-layout { width: min(1080px, 100%); flex: 1; display: grid; grid-template-columns: 0.82fr 1.18fr; align-items: center; gap: clamp(50px, 9vw, 138px); margin: 0 auto; padding: 74px 0 82px; }
+.intro-column { padding-bottom: 5px; }
+.eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 24px; color: var(--accent-color); }
+.eyebrow span { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-color); }
+h1 { margin: 0; font: 500 60px/1.08 'Playfair Display', Georgia, serif; letter-spacing: 0; }
+h1 em { color: var(--accent-color); font-weight: 500; }
+.intro-copy { max-width: 315px; margin: 21px 0 0; color: color-mix(in srgb, var(--ink-color) 67%, transparent); font-size: 14px; line-height: 1.8; }
+.draw-progress { max-width: 280px; display: flex; align-items: center; gap: 13px; margin-top: 48px; }
+.progress-count { color: var(--accent-color); font: 500 15px 'DM Mono', 'Courier New', monospace; }
+.progress-line { height: 1px; flex: 1; background: color-mix(in srgb, var(--ink-color) 25%, transparent); }
+.progress-total { color: color-mix(in srgb, var(--ink-color) 60%, transparent); white-space: nowrap; }
+.quote-card { position: relative; min-height: 430px; display: flex; flex-direction: column; padding: 29px 34px 24px; border: 1px solid color-mix(in srgb, var(--ink-color) 18%, transparent); border-radius: 5px; background: color-mix(in srgb, var(--page-color) 86%, white); box-shadow: 0 18px 55px color-mix(in srgb, var(--ink-color) 8%, transparent); animation: card-arrive 370ms ease both; }
+.card-topline { display: flex; align-items: center; justify-content: space-between; color: color-mix(in srgb, var(--ink-color) 58%, transparent); }
+.orbit-mark { color: var(--accent-color); font-size: 20px; }
+blockquote { position: relative; margin: auto 0 15px; padding: 27px 0 0; }
+blockquote::before { position: absolute; top: -22px; left: -2px; color: var(--accent-color); content: '\201C'; font: 74px/1 'Playfair Display', Georgia, serif; opacity: 0.76; }
+blockquote p { margin: 0; font: 500 35px/1.32 'Playfair Display', Georgia, serif; letter-spacing: 0; }
+.quote-author { display: flex; align-items: center; gap: 9px; margin: 0 0 30px; color: color-mix(in srgb, var(--ink-color) 66%, transparent); font-size: 12px; }
+.quote-author span { width: 18px; height: 1px; background: var(--accent-color); }
+.next-button { min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 16px 0 19px; border: 0; border-radius: 3px; color: var(--action-ink); background: var(--action-color); font-size: 12px; font-weight: 700; cursor: pointer; transition: filter 160ms ease, transform 160ms ease, background-color 350ms ease; }
+.next-button:hover { filter: brightness(0.92); transform: translateY(-1px); }
+.next-button:active { transform: translateY(0); }
+.next-button:focus-visible, .wordmark:focus-visible { outline: 3px solid var(--accent-color); outline-offset: 4px; }
+.button-arrow { font-size: 19px; font-weight: 400; }
+.card-footnote { margin: 15px 0 0; color: color-mix(in srgb, var(--ink-color) 53%, transparent); text-align: center; font-size: 9px; }
+.page-footer { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0 22px; border-top: 1px solid color-mix(in srgb, var(--ink-color) 18%, transparent); color: color-mix(in srgb, var(--ink-color) 58%, transparent); }
+@keyframes card-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 760px) { .quote-page { padding: 0 24px; } .quote-layout { max-width: 560px; grid-template-columns: 1fr; gap: 36px; padding: 50px 0 52px; } h1 { font-size: 48px; } .intro-copy { margin-top: 14px; } .draw-progress { margin-top: 23px; } .quote-card { min-height: 380px; } blockquote p { font-size: 32px; } }
+@media (max-width: 420px) { .quote-page { padding: 0 17px; } .masthead { min-height: 68px; } .masthead-note { display: none; } .issue-number { margin-left: auto; } .quote-layout { gap: 28px; padding-top: 37px; } h1 { font-size: 42px; } .quote-card { min-height: 360px; padding: 23px 21px 19px; } blockquote p { font-size: 28px; } .page-footer { font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }

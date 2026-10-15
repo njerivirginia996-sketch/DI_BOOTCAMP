@@ -1,0 +1,164 @@
+#root {
+  width: 100%;
+}
+
+.app-container {
+  width: min(92%, 720px);
+  margin: 50px auto;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.app-header h1 {
+  margin: 8px 0;
+  font-size: 2.5rem;
+  color: #202b45;
+}
+
+.app-header p {
+  color: #697386;
+}
+
+.app-header .eyebrow {
+  color: #3559c7;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.todo-card {
+  padding: 28px;
+  border: 1px solid #e0e5ee;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 8px 30px rgba(30, 45, 75, 0.07);
+}
+
+.add-todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.add-todo-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #ccd3df;
+  border-radius: 7px;
+  outline-color: #3559c7;
+}
+
+.add-todo-form button,
+.remove-button {
+  padding: 11px 15px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.add-todo-form button {
+  background: #3559c7;
+  color: white;
+  font-weight: 600;
+}
+
+.todo-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 15px;
+  color: #697386;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #e8ebf1;
+}
+
+.todo-list {
+  display: grid;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.todo-checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: #3559c7;
+}
+
+.todo-title {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+.todo-item.completed .todo-title {
+  color: #9299a7;
+  text-decoration: line-through;
+}
+
+.remove-button {
+  background: #fff0f0;
+  color: #b42318;
+}
+
+.remove-button:hover {
+  background: #ffdddd;
+}
+
+.status-message,
+.refresh-message {
+  padding: 18px 0;
+  color: #697386;
+  text-align: center;
+}
+
+.error-message {
+  color: #b42318;
+}
+
+.app-footer {
+  margin-top: 25px;
+  text-align: center;
+  color: #7a8496;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    margin: 25px auto;
+  }
+
+  .todo-card {
+    padding: 17px;
+  }
+
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .add-todo-form {
+    flex-direction: column;
+  }
+
+  .add-todo-form button {
+    padding: 13px;
+  }
+
+  .todo-item {
+    gap: 8px;
+  }
+
+  .remove-button {
+    padding: 9px;
+  }
+}

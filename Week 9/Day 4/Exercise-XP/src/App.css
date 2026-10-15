@@ -1,0 +1,75 @@
+#root {
+  width: 100%;
+}
+
+.app {
+  width: min(90%, 650px);
+  margin: 40px auto;
+}
+
+.app h1 {
+  text-align: center;
+}
+
+.subtitle {
+  color: #555;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.user-panel {
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.user-form {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.user-form input,
+.user-form button {
+  padding: 12px;
+  font: inherit;
+  border-radius: 6px;
+}
+
+.user-form input {
+  border: 1px solid #bbb;
+}
+
+.user-form button {
+  border: none;
+  background: #2457c5;
+  color: white;
+  cursor: pointer;
+}
+
+.user-form button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.user-details {
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+  overflow-wrap: anywhere;
+}
+
+.error {
+  color: #b42318;
+}
+
+@media (max-width: 480px) {
+  .app {
+    margin: 20px auto;
+  }
+
+  .user-panel {
+    padding: 16px;
+  }
+}

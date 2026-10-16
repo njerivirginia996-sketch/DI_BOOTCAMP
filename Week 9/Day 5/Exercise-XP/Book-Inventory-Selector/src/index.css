@@ -1,0 +1,79 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5f8;
+  color: #243047;
+}
+
+.book-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.genre-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.genre-buttons button {
+  padding: 11px 16px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.genre-buttons button.active,
+.genre-buttons button:hover {
+  background: #243047;
+  color: white;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.book-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.book-card h3 {
+  margin-top: 18px;
+}
+
+.book-genre {
+  font-size: 12px;
+  font-weight: bold;
+  background: #e8edf5;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+@media (max-width: 600px) {
+  .book-container {
+    padding: 25px 15px;
+  }
+
+  h1 {
+    font-size: 29px;
+  }
+}

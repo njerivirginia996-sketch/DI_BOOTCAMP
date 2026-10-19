@@ -1,0 +1,83 @@
+.exercise-page {
+  width: min(100% - 32px, 640px);
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.exercise-header {
+  margin-bottom: 28px;
+}
+
+.exercise-kicker,
+.counter-label {
+  color: #60786e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.exercise-header h1 {
+  margin: 6px 0;
+  color: #203b33;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 42px;
+  font-weight: 500;
+}
+
+.exercise-header > p:last-child {
+  color: #6f8079;
+  font-size: 14px;
+}
+
+.counter-card {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  padding: 36px 24px;
+  border: 1px solid #dce4de;
+  border-radius: 7px;
+  background: #fff;
+}
+
+.counter-label,
+.last-action {
+  margin: 0;
+}
+
+.counter-value {
+  color: #1e6557;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 76px;
+  line-height: 1;
+}
+
+.counter-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.counter-actions button {
+  width: 48px;
+  height: 44px;
+  border: 1px solid #1e6557;
+  border-radius: 4px;
+  background: #1e6557;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  font-size: 22px;
+}
+
+.last-action {
+  color: #718078;
+  font-size: 13px;
+}
+
+.last-action strong {
+  color: #344940;
+}
+
+:is(button):focus-visible {
+  outline: 3px solid #df8e67;
+  outline-offset: 3px;
+}

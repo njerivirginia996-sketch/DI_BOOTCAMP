@@ -1,0 +1,26 @@
+.greeting-page {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 32px 24px;
+}
+
+.greeting {
+  width: min(100%, 560px);
+  text-align: left;
+}
+
+.greeting-eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.greeting h1 {
+  margin: 8px 0 12px;
+}
+
+.greeting strong {
+  color: var(--text-h);
+}

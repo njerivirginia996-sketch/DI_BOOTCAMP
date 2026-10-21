@@ -1,0 +1,23 @@
+{
+  "name": "week-10-day-3-jwt-auth",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Express API demonstrating cookie-based JWT authentication and refresh-token rotation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "better-sqlite3": "^12.4.1",
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

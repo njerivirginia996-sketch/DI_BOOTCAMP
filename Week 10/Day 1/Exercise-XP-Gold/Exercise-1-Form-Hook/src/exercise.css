@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap');
+:root { font-family: 'Manrope', 'Segoe UI', sans-serif; color: #192d25; background: #f1f3ed; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; --ink: #192d25; --forest: #163e32; --green: #3e775d; --muted: #78857d; --mono: 'DM Mono', Consolas, monospace; }
+* { box-sizing: border-box; }
+body { min-width: 350px; min-height: 100vh; margin: 0; }
+#root { width: 100%; max-width: none; min-height: 100vh; margin: 0; border: 0; display: block; text-align: left; }
+button, input { font: inherit; }
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid #85b494; outline-offset: 3px; }
+code { padding: 2px 4px; border-radius: 3px; background: #edf2eb; color: #397056; font-family: var(--mono); font-size: .9em; }
+.form-app { width: min(100% - 64px, 1020px); margin: 0 auto; }
+.form-topbar { display: flex; align-items: center; justify-content: space-between; height: 70px; border-bottom: 1px solid #dce2da; }
+.form-wordmark { color: #1d3529; font-size: 11px; font-weight: 800; letter-spacing: 1.1px; text-decoration: none; }
+.form-wordmark span { color: #428060; }
+.form-topnote, .form-kicker, .form-panel-index, .form-code-note > span, .form-step-count > span, .form-footer { font-family: var(--mono); }
+.form-topnote { display: flex; align-items: center; gap: 8px; color: #7d8981; font-size: 9px; letter-spacing: .7px; }
+.form-topnote i { width: 6px; height: 6px; border-radius: 50%; background: #57a071; }
+.form-intro { padding: 55px 0 33px; animation: form-rise 400ms ease both; }
+.form-kicker { margin: 0; color: #698174; font-size: 9px; letter-spacing: 1px; }
+.form-intro .form-kicker span { margin-left: 10px; color: #c06045; }
+.form-intro h1 { margin: 17px 0 11px; color: var(--ink); font-family: 'Newsreader', Georgia, serif; font-size: clamp(43px, 6vw, 64px); font-weight: 500; letter-spacing: 0; line-height: .98; }
+.form-intro h1 em { color: #39795b; font-weight: 500; }
+.form-lede { max-width: 430px; margin: 0; color: #6f7c74; font-size: 12px; line-height: 1.75; }
+.form-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(240px, .75fr); gap: 17px; align-items: stretch; }
+.form-panel { padding: 24px 27px 19px; border: 1px solid #e0e6df; border-radius: 6px; background: #fff; box-shadow: 0 8px 30px rgb(28 47 35 / 4%); animation: form-rise 440ms 50ms ease both; }
+.form-panel-heading { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-bottom: 19px; border-bottom: 1px solid #edf0ec; }
+.form-panel-index { color: #a55a40; font-size: 8px; letter-spacing: .7px; }
+.form-panel-heading h2 { margin: 7px 0 0; color: #21372b; font-family: 'Newsreader', Georgia, serif; font-size: 24px; font-weight: 500; }
+.form-hook-label { flex-shrink: 0; margin-top: 2px; padding: 6px 7px; border: 1px solid #e2e9e1; border-radius: 4px; background: #f8faf7; color: #48745a; font-family: var(--mono); font-size: 8px; }
+.form-panel form { padding-top: 18px; }
+.form-field { display: grid; gap: 7px; margin-bottom: 15px; }
+.form-field label { color: #42534a; font-size: 10px; font-weight: 700; }
+.form-field input { width: 100%; height: 40px; padding: 0 11px; border: 1px solid #dce4dc; border-radius: 4px; background: #fcfdfb; color: var(--ink); font-size: 11px; }
+.form-field input::placeholder { color: #a3ada6; }
+.form-field input:focus { border-color: #75a28a; outline: none; box-shadow: 0 0 0 3px #e7f1e8; }
+.form-field input[aria-invalid="true"] { border-color: #c66b52; }
+.form-field-error, .form-field-help { font-size: 9px; line-height: 1.5; }
+.form-field-error { color: #ae4934; }
+.form-field-help { color: #849087; }
+.form-submit { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 42px; margin-top: 4px; padding: 0 13px; border: 0; border-radius: 4px; background: var(--forest); color: #fff; font-size: 10px; font-weight: 700; cursor: pointer; transition: transform 150ms ease, background 150ms ease; }
+.form-submit:hover:not(:disabled) { transform: translateY(-1px); background: #245a45; }
+.form-submit:disabled { cursor: wait; opacity: .7; }
+.form-submit span { color: #e3bd59; font-size: 15px; }
+.form-notice { margin: 0 0 12px; padding: 10px 11px; border-radius: 4px; font-size: 10px; line-height: 1.5; }
+.form-notice-error { color: #9f4532; background: #faeeea; }
+.form-notice-success { color: #286747; background: #eaf4e9; }
+.form-demo-note { margin: 13px 0 0; color: #849087; font-size: 8px; line-height: 1.6; }
+.form-aside { position: relative; overflow: hidden; padding: 25px 23px; border: 1px solid #dce5da; border-radius: 6px; background: #e8eee5; animation: form-rise 480ms 100ms ease both; }
+.form-note-mark { position: absolute; top: 9px; right: 15px; color: rgb(53 99 72 / 10%); font-family: 'Newsreader', Georgia, serif; font-size: 95px; line-height: 1; }
+.form-aside .form-kicker { position: relative; margin-top: 28px; color: #688271; font-size: 8px; }
+.form-aside h2 { position: relative; margin: 13px 0 10px; color: #20382b; font-family: 'Newsreader', Georgia, serif; font-size: 28px; font-weight: 500; line-height: 1.04; }
+.form-aside > p:not(.form-kicker) { position: relative; margin: 0; color: #68776d; font-size: 10px; line-height: 1.75; }
+.form-aside code { overflow-wrap: anywhere; }
+.form-code-note { display: grid; gap: 8px; margin-top: 20px; padding: 12px; border: 1px solid #d6e0d4; border-radius: 4px; background: rgb(255 255 255 / 55%); }
+.form-code-note > span { color: #87958a; font-size: 7px; letter-spacing: .7px; }
+.form-code-note code { color: #3b7155; font-size: 8px; }
+.form-code-note small { color: #78867d; font-size: 8px; }
+.form-step-count { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 23px; padding-top: 13px; border-top: 1px solid #d5dfd4; }
+.form-step-count > span { color: #849187; font-size: 8px; letter-spacing: .7px; }
+.form-step-count strong { color: #2f694d; font-family: 'Newsreader', Georgia, serif; font-size: 23px; font-weight: 500; line-height: 1; }
+.form-step-count small { font-family: var(--mono); font-size: 8px; }
+.form-footer { display: flex; justify-content: space-between; gap: 12px; padding: 22px 0; color: #89958d; font-size: 8px; letter-spacing: .35px; }
+.form-footer b { color: #b85c43; font-weight: 400; }
+@keyframes form-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+@media (max-width: 690px) { .form-app { width: min(100% - 36px, 500px); } .form-intro { padding: 38px 0 25px; } .form-layout { grid-template-columns: 1fr; } .form-aside { padding: 18px 20px; } .form-aside .form-kicker { margin-top: 10px; } .form-aside h2 br { display: none; } .form-aside h2 { font-size: 24px; } .form-code-note { margin-top: 14px; } .form-step-count { margin-top: 14px; } }
+@media (max-width: 410px) { .form-app { width: min(100% - 28px, 500px); } .form-panel { padding-inline: 17px; } .form-panel-heading h2 { font-size: 21px; } .form-topnote { font-size: 8px; } .form-footer { font-size: 7px; } }

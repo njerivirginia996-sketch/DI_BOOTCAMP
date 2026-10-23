@@ -1,0 +1,19 @@
+{
+  "name": "collaborative-storytelling-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend",
+    "types"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @story-app/types && npm run build --workspace @story-app/backend && npm run build --workspace @story-app/frontend",
+    "dev": "concurrently -k -n api,web -c blue,green \"npm run dev --workspace @story-app/backend\" \"npm run dev --workspace @story-app/frontend\"",
+    "start": "npm run start --workspace @story-app/backend",
+    "test": "npm run build --workspace @story-app/types && npm run test --workspace @story-app/backend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
